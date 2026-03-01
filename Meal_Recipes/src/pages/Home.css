@@ -1,0 +1,48 @@
+.home-page {
+  text-align: center;
+}
+
+.home-hero {
+  padding: 2rem 1rem;
+}
+
+.home-hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.home-hero p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.home-btn {
+  background-color: orange;
+  color: white;
+  padding: 1.2rem 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-btn:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .home-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .home-hero p {
+    font-size: 1.2rem;
+  }
+    .home-btn {
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+  }
+}
