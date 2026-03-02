@@ -1,62 +1,52 @@
-/* ===== GLOBAL RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ===== FULL HEIGHT STRUCTURE ===== */
 html, body, #root {
+  width: 100%;
+  min-width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
 .app-layout {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .main-content {
   flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-/* ===== BASE STYLES ===== */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* ===== PAGE CONTENT ===== */
-.page {
-  flex: 1;
-  width: 100%;
   padding: 1rem;
-
-  /* center content only */
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-/* ===== HEADER & FOOTER FULL WIDTH ===== */
-.header,
-.footer {
-  width: 100%;
+.header, .footer {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* ===== RECIPE GRID ===== */
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
+  width: 100%;
 }
 
 .recipe-card {
@@ -115,13 +105,12 @@ button:hover {
   margin-bottom: 0.5rem;
 }
 
-/* ===== TABLET ===== */
 @media (min-width: 768px) {
   .recipe-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .page {
+  .main-content {
     padding: 2rem;
   }
 
@@ -148,7 +137,6 @@ button:hover {
   }
 }
 
-/* ===== DESKTOP ===== */
 @media (min-width: 1024px) {
   .recipe-grid {
     grid-template-columns: repeat(3, 1fr);

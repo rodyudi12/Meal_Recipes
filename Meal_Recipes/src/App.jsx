@@ -27,7 +27,6 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-
         <Footer />
       </div>
     </BrowserRouter>
