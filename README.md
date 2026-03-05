@@ -7,6 +7,34 @@ FastRecipes is a single-page web application (SPA) that allows users to search, 
 - API: [TheMealDB API](https://www.themealdb.com/api.php)
 - Development Tools: Vite, JavaScript, CSS
 
+## Authentication System
+
+### Demo accounts for testing:
+
+- User: user@user.com / user123
+
+- Admin: admin@admin.com / admin123
+
+### Features:
+
+- Registration page (creates a demo user; no backend persistence yet)
+
+- Login page with email/password validation
+
+- Logout functionality with token cleanup
+
+- Protected routes for Dashboard pages
+
+- Admin dashboard shows all users’ saved recipes
+
+### Security measures:
+
+XSS prevention via DOMPurify
+
+Sensitive data stored securely in localStorage
+
+CSRF protection prepared for future API integration
+
 ## Setup and Installation
 1. Clone the repository:
    ```bash
@@ -20,6 +48,8 @@ FastRecipes is a single-page web application (SPA) that allows users to search, 
     npm run dev
     Open in browser at http://localhost:5173
 
+    
+
 ## Available Routes and Features
 
 ### Routes 
@@ -27,7 +57,10 @@ FastRecipes is a single-page web application (SPA) that allows users to search, 
 2. /recipes	Recipe search page with search bar and category filter
 3. /recipe/:id	Recipe details page with ingredients, instructions, and save/remove favorites button
 4. /dashboard	Dashboard showing all saved recipes with View and Remove buttons
-5. 404 Not Found page
+5. /admin — Admin dashboard showing all users’ saved recipes (admin only)
+6. /login — Login page
+7. /register — Registration page
+8. 404 Not Found page
 
 ### Features
 
@@ -37,6 +70,8 @@ FastRecipes is a single-page web application (SPA) that allows users to search, 
 4. Save and remove recipes from favorites instantly
 5. Responsive design for mobile, tablet, and desktop
 6. Smooth SPA navigation using React Router
+7. Authentication & authorization flows
+8. Admin view for managing all users’ favorites
 
 ## API Documentation
 1. The app uses TheMealDB API for recipe data. Key endpoints:
@@ -56,16 +91,11 @@ Recipe Details
 Dashboard
 ![Dashboard](assets/Dashboard.png)
 ![Dashboard](assets/Dashboard_with_recipes.png)
-
-### Known Issues
-- The Header are adapting to the content, so if there are no content in the dashboard for example, the header will be smaller
-- Some categories may return empty results due to API limitations
-- Favorites are stored in memory via React Context; no persistent storage yet
-
+![AdminDashboard] (assets/AdminDashboard.png)
+![LoginPage] (assets/LoginPage.png)
+![RegistePage] (assets/Registerpage.png)
 
 ### Future Enhancements
-- Add persistent storage (localStorage)
-- Implement user authentication for personal dashboards
 - Enable pagination or infinite scroll for recipe results
 - Advanced filtering (by cuisine, ingredients, dietary restrictions)
 
@@ -79,8 +109,8 @@ vercel deploy
 src/
 ├── assets/             # Images and static files
 ├── components/         # Reusable components (Header, Footer, RecipeCard, LoadingSpinner)
-├── contexts/           # Context API for favorites
-├── pages/              # Pages (Home, RecipeSearch, RecipeDetails, Dashboard, NotFound)
+├── contexts/           # Context API for favorites and Authentication
+├── pages/              # Pages (Home, RecipeSearch, RecipeDetails, Dashboard, Register, Login,  NotFound)
 ├── services/           # API service functions
 ├── App.jsx             # Main App component with routing
 ├── main.jsx            # Entry point

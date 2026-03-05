@@ -1,41 +1,49 @@
 .search-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
   align-items: center;
 }
 
+/* INPUT */
 .search-bar input[type="text"] {
-  padding: 1rem 1.2rem;
-  font-size: 1.3rem;
-  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
   border: 1px solid #ccc;
   flex: 1 1 250px;
 }
 
+/* SELECT */
 .search-bar select {
-  padding: 1rem 1.2rem;
-  font-size: 1.3rem;
-  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
   border: 1px solid #ccc;
   cursor: pointer;
-  flex: 0 0 180px;
+  flex: 0 0 160px;
 }
 
-
+/* BUTTON */
 .search-bar button {
-  padding: 1rem 1.5rem; 
-  font-size: 1.3rem;
-  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
   border: none;
   background-color: #ff7043;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.2s;
-  flex: 0 0 auto;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
 .search-bar button:hover {
   background-color: #e64a19;
+  transform: translateY(-2px);
+}
+.recipe-grid img {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  height: 300px;
 }

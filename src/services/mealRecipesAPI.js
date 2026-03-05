@@ -1,5 +1,4 @@
-const BASE_URL = "https://www.themealdb.com/api/json/v1/1";
-
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const searchRecipesByName = async (name) => {
   try {

@@ -4,7 +4,6 @@ import RecipeCard from "../components/RecipeCard";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { searchRecipesByName } from "../services/mealRecipesAPI";
 import "./Home.css";
-import "../components/RecipeCard.css";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -13,8 +12,8 @@ const Home = () => {
 
   useEffect(() => {
     const fetchFeatured = async () => {
-      const data = await searchRecipesByName("chicken");
-      setFeaturedRecipes(data ? data.slice(0, 6) : []);
+      const data = await searchRecipesByName("");
+      setFeaturedRecipes(data ? data.slice(0, 8) : []);
       setLoading(false);
     };
 
