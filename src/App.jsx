@@ -29,14 +29,12 @@ function App() {
 
             <main className="main-content">
               <Routes>
-                {/* Public Routes */}
                 <Route path="/" element={<Home />} />
                 <Route path="/recipes" element={<RecipeSearch />} />
                 <Route path="/recipe/:id" element={<RecipeDetails />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
 
-                {/* Protected Routes */}
                 <Route
                   path="/dashboard"
                   element={
@@ -46,7 +44,6 @@ function App() {
                   }
                 />
 
-                {/* Admin-only Route */}
                 <Route
                   path="/admin"
                   element={
@@ -56,7 +53,6 @@ function App() {
                   }
                 />
 
-                {/* 404 Not Found */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

@@ -6,7 +6,6 @@
   align-items: center;
 }
 
-/* INPUT */
 .search-bar input[type="text"] {
   padding: 0.6rem 1rem;
   font-size: 1rem;
@@ -15,7 +14,6 @@
   flex: 1 1 250px;
 }
 
-/* SELECT */
 .search-bar select {
   padding: 0.6rem 1rem;
   font-size: 1rem;
@@ -25,7 +23,6 @@
   flex: 0 0 160px;
 }
 
-/* BUTTON */
 .search-bar button {
   padding: 0.6rem 1.2rem;
   font-size: 1rem;

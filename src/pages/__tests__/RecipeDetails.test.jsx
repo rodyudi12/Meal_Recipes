@@ -60,26 +60,20 @@ describe("RecipeDetails Page", () => {
       </MemoryRouter>
     );
 
-    // Check loading spinner appears initially
     expect(screen.getByTestId("loading-spinner")).toBeInTheDocument();
 
-    // Wait for recipe to load
     await waitFor(() => {
       expect(screen.queryByTestId("loading-spinner")).not.toBeInTheDocument();
     });
 
-    // Check recipe title
     expect(screen.getByText("Chicken Curry")).toBeInTheDocument();
 
-    // Check category and area separately to avoid multi-node issues
     expect(screen.getByText("Main")).toBeInTheDocument();
     expect(screen.getByText("| Indian")).toBeInTheDocument(); 
 
-    // Check ingredients and instructions
     expect(screen.getByText("1 kg Chicken")).toBeInTheDocument();
     expect(screen.getByText("Cook it well.")).toBeInTheDocument();
 
-    // Check image
     expect(screen.getByRole("img", { name: /chicken curry/i })).toHaveAttribute("src", "image.jpg");
   });
 
@@ -94,7 +88,6 @@ describe("RecipeDetails Page", () => {
       </MemoryRouter>
     );
 
-    // Wait for recipe to load
     await waitFor(() => {
       expect(screen.queryByTestId("loading-spinner")).not.toBeInTheDocument();
     });
@@ -106,7 +99,6 @@ describe("RecipeDetails Page", () => {
   });
 
   it("calls removeFavorite if recipe is already in favorites", async () => {
-    // Override FavoritesContext to include this recipe
     useFavorites.mockReturnValue({
       favorites: [mockRecipe],
       addFavorite: mockAddFavorite,

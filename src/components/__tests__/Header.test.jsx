@@ -1,10 +1,8 @@
-// src/components/__tests__/Header.test.jsx
 import { render, screen, fireEvent } from "@testing-library/react";
 import Header from "../Header";
 import { vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 
-// Mock useAuth
 const mockLogout = vi.fn();
 vi.mock("../../contexts/AuthContext", () => ({
   useAuth: vi.fn(),
@@ -30,10 +28,8 @@ describe("Header Component", () => {
       </MemoryRouter>
     );
 
-    // Logo
     expect(screen.getByAltText(/fastrecipes logo/i)).toBeInTheDocument();
 
-    // Nav links
     links.forEach((link) => {
       expect(screen.getByText(link.name)).toBeInTheDocument();
     });

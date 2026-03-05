@@ -1,10 +1,8 @@
-// src/components/__tests__/ProtectedRoute.test.jsx
 import { render, screen } from "@testing-library/react";
 import ProtectedRoute from "../ProtectedRoutes";
 import { vi } from "vitest";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 
-// Mock useAuth
 vi.mock("../../contexts/AuthContext", () => ({
   useAuth: vi.fn(),
 }));

@@ -32,7 +32,6 @@ const RegisterPage = () => {
     <div className="register-page">
       <h2>Register</h2>
 
-      {/* React automatically escapes output to prevent XSS */}
       {error && <p className="error">{error}</p>}
 
       <form onSubmit={handleSubmit}>

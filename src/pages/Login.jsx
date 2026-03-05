@@ -42,7 +42,6 @@ const LoginPage = () => {
         admin@admin.com / admin123
       </p>
 
-      {/* React escapes this automatically */}
       {error && <p className="error">{error}</p>}
 
       <form onSubmit={handleSubmit}>

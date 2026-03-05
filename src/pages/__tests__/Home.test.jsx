@@ -32,7 +32,6 @@ describe("Home Page", () => {
   });
 
   it("shows loading spinner initially and then featured recipes", async () => {
-    // Mock API response
     const mockData = [
       { idMeal: "1", strMeal: "Chicken Curry" },
       { idMeal: "2", strMeal: "Grilled Chicken" },
@@ -45,10 +44,8 @@ describe("Home Page", () => {
       </BrowserRouter>
     );
 
-    // Check loading spinner shows up initially
     expect(screen.getByTestId("loading-spinner")).toBeInTheDocument();
 
-    // Wait for the recipes to appear
     await waitFor(() => {
       expect(screen.queryByTestId("loading-spinner")).not.toBeInTheDocument();
 

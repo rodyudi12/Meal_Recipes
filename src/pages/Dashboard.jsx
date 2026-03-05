@@ -1,17 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useFavorites } from "../contexts/FavoritesContext";
-import { useAuth } from "../contexts/AuthContext"; // ✅ import Auth hook
+import { useAuth } from "../contexts/AuthContext";
 import RecipeCard from "../components/RecipeCard";
 import "./Dashboard.css";
 
 const Dashboard = () => {
   const { favorites, removeFavorite } = useFavorites();
-  const { user } = useAuth(); // ✅ get current user
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   return (
     <div className="dashboard-page">
-      {/* Show user's name dynamically */}
       <h1>Welcome, {user?.name || "User"}</h1>
 
       {favorites.length > 0 ? (

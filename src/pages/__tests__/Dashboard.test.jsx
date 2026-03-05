@@ -1,4 +1,3 @@
-// src/pages/__tests__/Dashboard.test.jsx
 import { render, screen, fireEvent } from "@testing-library/react";
 import Dashboard from "../Dashboard";
 import { vi } from "vitest";
@@ -16,7 +15,6 @@ vi.mock("react-router-dom", async () => {
   };
 });
 
-// Mock Favorites and Auth contexts
 vi.mock("../../contexts/FavoritesContext.jsx", () => ({
   useFavorites: vi.fn(),
 }));
@@ -25,7 +23,6 @@ vi.mock("../../contexts/AuthContext.jsx", () => ({
   useAuth: vi.fn(),
 }));
 
-// Mock RecipeCard
 vi.mock("../../components/RecipeCard", () => ({
   default: ({ recipe }) => <div data-testid="recipe-card">{recipe.strMeal}</div>,
 }));
@@ -66,13 +63,11 @@ describe("Dashboard Page", () => {
       </BrowserRouter>
     );
 
-    // Check that recipes are rendered
     const recipeCards = screen.getAllByTestId("recipe-card");
     expect(recipeCards).toHaveLength(2);
     expect(recipeCards[0]).toHaveTextContent("Chicken Curry");
     expect(recipeCards[1]).toHaveTextContent("Grilled Chicken");
 
-    // Click remove buttons
     const removeButtons = screen.getAllByText("Remove from Favorites");
     fireEvent.click(removeButtons[0]);
     expect(mockRemoveFavorite).toHaveBeenCalledWith("1");

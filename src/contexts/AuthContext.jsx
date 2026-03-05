@@ -31,7 +31,6 @@ export const AuthProvider = ({ children }) => {
       throw new Error("Invalid email or password.");
     }
 
-    // 🔐 Never store password
     setUser({
       email: foundUser.email,
       role: foundUser.role,

@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import RecipeCard from "../components/RecipeCard";
 import LoadingSpinner from "../components/LoadingSpinner";
-import {
-  searchRecipesByName,
-  searchRecipesByCategory
-} from "../services/mealRecipesAPI";
+import {searchRecipesByName,searchRecipesByCategory} from "../services/mealRecipesAPI";
 import "./RecipeSearch.css";
 import "../components/RecipeCard.css";
 
@@ -26,17 +23,14 @@ const RecipeSearch = () => {
     try {
       let data = [];
 
-      // Search by name
       if (query.trim()) {
         data = await searchRecipesByName(query);
       }
 
-      // Filter by category
       else if (category !== "All") {
         data = await searchRecipesByCategory(category);
       }
 
-      // Show all recipes
       else {
         const categories = ["Beef", "Chicken", "Dessert", "Seafood", "Vegetarian"];
 
@@ -46,7 +40,6 @@ const RecipeSearch = () => {
 
         data = results.flat();
 
-        // Sort alphabetically
         data.sort((a, b) => a.strMeal.localeCompare(b.strMeal));
       }
 

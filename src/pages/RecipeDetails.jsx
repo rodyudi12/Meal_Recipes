@@ -81,10 +81,10 @@ const RecipeDetails = () => {
         <h2>Instructions</h2>
         <ol>
           {recipe.strInstructions
-            .split(/\.\s+/) // Split into steps by periods
-            .filter(step => step.trim() !== "") // Remove empty strings
+            .split(/\.\s+/)
+            .filter(step => step.trim() !== "")
             .map((step, index) => (
-              <li key={index}>{step}.</li> // Add period back
+              <li key={index}>{step}.</li>
             ))}
         </ol>
       </div>

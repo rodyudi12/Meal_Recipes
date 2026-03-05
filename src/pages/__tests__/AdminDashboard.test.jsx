@@ -1,4 +1,3 @@
-// src/pages/__tests__/AdminDashboard.test.jsx
 import { render, screen } from "@testing-library/react";
 import { vi } from "vitest";
 import { BrowserRouter } from "react-router-dom";
@@ -6,7 +5,6 @@ import AdminDashboard from "../AdminDashboard";
 import { useFavorites } from "../../contexts/FavoritesContext";
 import { useAuth } from "../../contexts/AuthContext";
 
-// Mock contexts
 vi.mock("../../contexts/FavoritesContext", () => ({
   useFavorites: vi.fn(),
 }));
@@ -72,11 +70,9 @@ describe("AdminDashboard", () => {
 
     expect(screen.getByText("Admin Dashboard")).toBeInTheDocument();
 
-    // Check each user's heading
     expect(screen.getByText("User: user1@example.com")).toBeInTheDocument();
     expect(screen.getByText("User: user2@example.com")).toBeInTheDocument();
 
-    // Check recipe cards
     const recipeCards = screen.getAllByTestId("recipe-card");
     expect(recipeCards).toHaveLength(3);
     expect(recipeCards[0]).toHaveTextContent("Pizza");
